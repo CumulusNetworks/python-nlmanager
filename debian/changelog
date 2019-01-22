@@ -1,0 +1,158 @@
+python-nlmanager (1.0.0) UNRELEASED; urgency=medium
+
+  * New. Enabled. nlpacket: add support (uint32) for IFLA_BRPORT_BACKUP_PORT
+  * New. nlpacket: removing IFLA_BRPORT_DOWN_PEERLINK_REDIRECT attribute
+  * New. Enabled. use strerror to accurately print kernel errors
+  * New. Enabled. nlpacket: update BRPORT_GROUP_FWD_MASKHI and
+    DOWN_PEERLINK_REDIRECT values
+  * New. Enabled. new IFLA_BRPORT attributes
+    IFLA_BRPORT_NEIGH_SUPPRESS
+    IFLA_BRPORT_ISOLATED
+    IFLA_BRPORT_BACKUP_PORT
+
+ -- Julien Fortin <julien@cumulusnetworks.com>  Sat, 05 Jan 2019 23:42:43 +0000
+
+python-nlmanager (0.16.0) UNRELEASED; urgency=medium
+
+  * New. Enabled. nlpacket: Use strerror for error handling
+  * New. Enabled. nlpacket: add family string (AF_*) to debug dump
+  * New. Enabled. nlpacket: add decode support for tunnel devices:
+        - gre
+        - gretap
+        - erspan
+        - ip6gre
+        - ip6gretap
+        - ip6erspan
+        - ipip
+        - sit
+        - ip6tnl
+        - vti
+        - vti6
+
+ -- Julien Fortin <julien@cumulusnetworks.com>  Sat, 05 Jan 2019 23:42:42 +0000
+
+python-nlmanager (0.15.0) UNRELEASED; urgency=medium
+
+  * New. Enabled. nlpacket: add netconf support (RTM_GETNETCONF/RTM_NEWNETCONF)
+  * New. Enabled. nlmanager: vxlan creation: add support for IFLA_VXLAN_LINK
+  * New. Enabled. nlpacket: decode support for IFLA_AF_SPEC (inet6 attributes)
+  * New. Enabled. nlpacket: decode support for GREv6 ipv6 on IFLA_ADDRESS and IFLA_BROADCAST
+
+ -- Julien Fortin <julien@cumulusnetworks.com>  Fri, 31 Aug 2018 23:42:42 +0200
+
+python-nlmanager (0.14.0) UNRELEASED; urgency=medium
+
+  * nlpacket: fix IFLA_VXLAN_PORT decode endianness
+  * nlpacket: renaming IFLA_BRPORT_NO_FLUSH to IFLA_BRPORT_DOWN_PEERLINK_REDIRECT
+
+ -- Julien Fortin <julien@cumulusnetworks.com>  Fri, 06 Apr 2018 21:57:47 +0000
+
+python-nlmanager (0.13.0) UNRELEASED; urgency=medium
+
+  * New. Enabled. add decode support for bond slave attributes (IFLA_BOND_SLAVE_XXX)
+
+ -- Julien Fortin <julien@cumulusnetworks.com>  Wed, 21 Feb 2018 06:26:45 +0100
+
+python-nlmanager (0.12.0) UNRELEASED; urgency=medium
+
+  * New. Enabled. add support for IFLA_BRPORT_NO_FLUSH attribute
+
+ -- Julien Fortin <julien@cumulusnetworks.com>  Thu, 08 Feb 2018 09:11:42 +0100
+
+python-nlmanager (0.11.0) UNRELEASED; urgency=medium
+
+  * New. Enabled. add IFLA_BRPORT_GROUP_FWD_MASK and IFLA_BRPORT_GROUP_FWD_MASKHI attributes
+
+ -- Julien Fortin <julien@cumulusnetworks.com>  Mon, 27 Nov 2017 18:40:29 +0000
+
+python-nlmanager (0.10.0) UNRELEASED; urgency=medium
+
+  * New. Enabled. add Cumulus copyright and GPL-2 license to source files
+  * New. Enabled. nlpacket:: add support for IFLA_INFO_DATA bond attributes
+  * New. Enabled. nlpacket:: add support for bridge and bridge-port
+(IFLA_INFO_SLAVE_DATA) attributes
+  * New. Enabled. MPLS labels support
+  * New. Add examples/frr-decoder.py
+  * New. Add better support for NLMSG_DONE
+  * Fixes: lower log lvl of "Add support for encoding/decoding" msgs
+  * Fixes: nllistener: changes needed for handling socket overflow
+
+ -- Julien Fortin <julien@cumulusnetworks.com>  Thu, 10 Aug 2017 22:30:10 +0200
+
+python-nlmanager (0.9.0) UNRELEASED; urgency=medium
+
+  * New. nlpacket:: add decode support for IFLA_VLAN_PROTOCOL
+  * New. nlpacket:: Added NTF_EXT_LEARNED flag definition
+  * Fixes: RTM_NEWNEIGH need to show what the state and flags are
+  * New. nlpacket: ARP suppress bridge port attribute
+  * New. nllistener: Add API for getting all bridge links
+  * New. Add support to decode IFLA_BR_VLAN_FILTERING
+  * New. nlmanager: Updates to support clag
+
+ -- Julien Fortin <julien@cumulusnetworks.com>  Tue, 18 Apr 2017 10:21:26 -0700
+
+python-nlmanager (0.8.0) UNRELEASED; urgency=medium
+
+  * New. Add support for ip link set master/nomaster
+
+ -- Julien Fortin <julien@cumulusnetworks.com>  Wed, 30 Nov 2016 18:55:40 +0000
+
+python-nlmanager (0.7.0) UNRELEASED; urgency=medium
+
+  * New. Add copyright file
+  * Fixes: Resolve IFLA_ADDRESS and IFLA_BROADCAST unpacking issue
+
+ -- Julien Fortin <julien@cumulusnetworks.com>  Thu, 17 Nov 2016 06:33:58 -0800
+
+python-nlmanager (0.6.0) UNRELEASED; urgency=medium
+
+  * Fixes: 'Link' object has no attribute 'family'
+
+ -- Julien Fortin <julien@cumulusnetworks.com>  Tue, 01 Nov 2016 19:28:26 +0000
+
+python-nlmanager (0.5.0) UNRELEASED; urgency=medium
+
+  * Fixes: crash in nlmanager "'int' object has no attribute 'packed'"
+
+ -- Julien Fortin <julien@cumulusnetworks.com>  Tue, 11 Oct 2016 18:33:53 +0000
+
+python-nlmanager (0.4.0) UNRELEASED; urgency=medium
+
+  * Fixes: nlmanager: fixing error messages when receiving NLMSG_ERROR
+  * Fixes: rdnbrd "Interrupted system call" traceback in nlmanager
+  * New. nlmanager: add support for bridge vlan and show commands
+  * New. nlmanager: changing log level (info->debug) for TXed messages
+  * New. nlmanager: Support new attribute types
+
+ -- Julien Fortin <julien@cumulusnetworks.com> Wed, 07 Sep 2016 21:03:42 +0000
+
+python-nlmanager (0.3.0) UNRELEASED; urgency=medium
+
+  * New. nlpacket: add new attribute: AttributeStringInterfaceName with length check
+  * New. nlmanager: changing log level info->debug for TXed messages
+  * New. nlmanager: changing log level to debug for RXed messages
+  * New. Add vxlan creation support
+  * Closes: Remove dependancy on tabulate
+  * Closes: 'this is an ACK' message should be log.debug() not log.info()
+  * Closes: wait for ACK after single packet operation
+  * Closes: removing IFLA_VXLAN_LINK attribute from packet when creating vxlan
+  * Closes: changing messages logged and raised when RXed NLMSG_ERROR
+  * Fixes: nlpacket: vxlan dstport config incorrect
+  * Fixes: Attribute 20 is not defined in Route.attribute_to_class
+
+ -- Julien Fortin <julien@cumulusnetworks.com> Tue, 16 Aug 2016 13:39:06 +0000
+
+python-nlmanager (0.2.0) UNRELEASED; urgency=medium
+
+  * New. Make request_dump() work for links, neighbors, addresses and routes
+  * New. Enabled: Added some new bond attributes
+  * New. Enabled: Added lots of IFLA_BRPORT_ and NDA_ attributes
+  * New. Enabled: Added _link_bridge_vlan() API for ifupdown2
+
+ -- Julien Fortin <julien@cumulusnetworks.com>  Wed, 04 May 2016 14:16:20 +0000
+
+python-nlmanager (0.1.0) unstable; urgency=low
+
+  * Initial release
+
+ -- Daniel Walton <dwalton@cumulusnetworks.com>  Mon, 22 Jun 2015 14:03:29 -0700

@@ -1,0 +1,12 @@
+Source: python-nlmanager
+Section: net
+Priority: standard
+Maintainer: dev-support <dev-support@cumulusnetworks.com>
+Build-Depends: debhelper (>= 8.0.0), git, python-minimal, python-setuptools, python-ipaddr
+Standards-Version: 3.9.3
+Homepage:
+
+Package: python-nlmanager
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}
+Description: Netlink interface using Python
