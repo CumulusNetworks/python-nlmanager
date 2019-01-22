@@ -26,7 +26,7 @@ from setuptools import setup
 
 setup(
     version="1.0.0",
-    name="python-nlmanager",
+    name="nlmanager",
     description="python-nlmanager - Netlink interface using Python",
     url="https://www.cumulusnetworks.com/",
     author="Julien Fortin",
